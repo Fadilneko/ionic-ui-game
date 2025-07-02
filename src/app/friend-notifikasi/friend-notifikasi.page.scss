@@ -1,0 +1,143 @@
+ion-toolbar {
+    --background: white;
+    --box-shadow: none;
+
+    ion-title {
+        color: #444;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.friend-feed-content {
+  --background: #ffffff;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.feed-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+  padding: 0px 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  ion-item {
+    --background: #fff ;
+    color: #444;
+  }
+
+}
+
+
+.feed-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.feed-text {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: gray;
+}
+
+.celebrate-button {
+  --border-radius: 12px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.divider {
+  border-top: 1px solid #e0e0e0;
+
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reactions-stacked {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  position: relative;
+  height: 32px;
+
+  .reaction-icon {
+    
+    padding: 4px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #e0e0e0;
+    background-color: white;
+
+  }
+
+  .reaction-count {
+    margin-left: 70px;
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: bold;
+  }
+}
+
+.reactions-single {
+  display: flex;
+  align-items: center;
+
+  margin-top: 4px;
+  margin-bottom: 8px;
+
+  .reaction-icon {
+    color: white;
+    border: 2px solid #e0e0e0;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .reaction-count {
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: bold;
+  }
+}
+
+.comment-input {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.avatar-initial {
+  background: #f44336;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,77 @@
+
+<ion-header>
+  <ion-toolbar >
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goToShop()" fill="clear">
+        <ion-icon name="close-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="centered-title">Super</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="super-content">
+
+  <div class="promo-banner">
+    
+    <div class="promo-content">
+      <div class="promo-left">
+        
+        <div class="promo-badge">SUPER</div>
+        <h2 class="promo-title">Save with family packages!</h2>
+        <p class="promo-subtitle">Learn faster for 2–6 people</p>
+      </div>
+      <div class="promo-right">
+        <img src="assets/vip.png" alt="Family package" />
+      </div>
+    </div>
+   
+    <ion-button fill="outline" class="promo-btn">
+      TRY 2 WEEKS FREE
+    </ion-button>
+  </div>
+
+  <div class="section">
+    <h3>Manage Features</h3>
+    <ion-card class="feature-card">
+      <ion-item lines="none">
+        <img src="assets/heart-energy.png" class="feature-icon" />
+        <ion-label>
+          <h4>Unlimited Hearts</h4>
+          <p class="toggle-text">TURN OFF</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card class="feature-card">
+      <ion-item lines="none">
+        <img src="assets/vip.png" class="feature-icon" />
+        <ion-label>
+          <h4>Super App Icon</h4>
+          <p class="toggle-text">TURN OFF</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+
+
+  <div class="section">
+    <h3>More Super Benefits</h3>
+    <div class="bungkus">
+    <ion-item lines="full">
+      <img src="assets/no-ads.png" class="feature-icon" />
+      <ion-label>
+        <h4>No ads</h4>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="assets/cup.png" class="feature-icon" />
+      <ion-label>
+        <h4>Free entry to League</h4>
+      </ion-label>
+    </ion-item>
+    </div>
+  </div>
+</ion-content>

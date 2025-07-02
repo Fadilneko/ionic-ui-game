@@ -1,20 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="home-content">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Header Stats -->
+  <div class="header-stats">
+    <div class="stat-item" (click)="toggleLanguageList()">
+      <img src="https://flagcdn.com/es.svg" class="stat-icon" />
+      <span class="stat-value">15</span>
+    </div>
+    <div class="stat-item" (click)="goToStreak()">
+  <i class="fa-solid fa-fire"></i>
+  <span class="stat-value orange">746</span>
+    </div>
+    <div class="stat-item " (click)="goToShop()">
+      <i class="fa-solid fa-gem"></i>
+      <span class="stat-value blue">287</span>
+    </div>
+    <div class="stat-item" (click)="goToSuper()">
+      <img src="assets/premium.png" class="stat-icon" />
+    </div>
   </div>
+
+
+  <div class="language-tabs" *ngIf="showLanguageList">
+    <div class="flex">
+    <div class="lang-column">
+    <div class="lang-item active">
+      <img src="https://flagcdn.com/es.svg" />
+    </div>
+    <div class="lang-label">Spanish</div>
+    </div>
+    <div>
+    <div class="lang-item">
+      <img src="https://flagcdn.com/de.svg" />
+    </div>
+    <div class="lang-label">German</div>
+    </div>
+    <div>
+    <div class="lang-item">
+      <img src="https://flagcdn.com/al.svg" />
+    </div>
+    <div class="lang-label">Arabia</div>
+    </div>
+    <div>
+    <div class="lang-item">
+      <img src="https://flagcdn.com/fr.svg" />
+    </div>
+    <div class="lang-label">France</div>
+    </div>
+
+    </div>
+
+    <div class="score-card">
+    <div class="score-row">
+      <strong>15</strong>
+      <ion-progress-bar value="0.5" class="progress-bar" color="success"></ion-progress-bar>
+      <strong>16</strong>
+    </div>
+    <p class="score-desc">Duolingo Spanish Score unlocked!</p>
+    <a class="score-link" href="#">MORE ABOUT SCORE</a>
+  </div>
+
+  </div>  
+
 </ion-content>

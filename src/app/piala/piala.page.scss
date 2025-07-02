@@ -1,0 +1,144 @@
+.leaderboard-content {
+  --background: #ffffff;
+  padding: 16px;
+
+}
+
+.judul {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.judul-hari {
+    display: flex;
+    padding-top: 22px;
+}
+
+.league-header h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.league-subtext {
+  padding-left: 16px ;
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.league-subtext ion-icon {
+  margin-left: 8px;
+}
+
+.days-left {
+  color: var(--ion-color-warning);
+  font-weight: bold;
+  margin-left: 4px;
+  font-size: small;
+}
+
+.podium {
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.medal {
+  font-size: 32px;
+}
+
+.gold {
+  color: #fcd34d;
+  font-size: 50px;
+}
+.blue {
+  color: rgb(60, 60, 202);
+  font-size: 50px;
+}
+.red {
+  color: #f87171;
+  font-size: 90px;
+}
+.gray {
+  color: #d4d4d4;
+  font-size: 50px;
+}
+
+.leaderboard-list {
+  margin-top: 8px;
+  background-color: white;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  --background: white;
+  padding-bottom: 16px;
+}
+
+.rank {
+  width: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+.avatar-icon {
+  font-size: 32px;
+  margin: 0 12px;
+}
+
+.garis {
+    width: 100%;
+    height: 1px;
+    background-color: #c0c0c0;
+}
+
+.username {
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.xp {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.boost-badge-floating {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #a98fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+  text-align: center;
+  padding: 6px;
+}
+
+.boost-badge-floating ion-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.boost-text {
+  line-height: 1;
+}
+
+

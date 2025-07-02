@@ -1,0 +1,217 @@
+<ion-header [ngClass]="{'header-friends': segmentValue === 'friends'}">
+
+  <ion-toolbar [ngClass]="{ 'toolbar-white': scrolled || segmentValue==='friends' }">
+  
+  <ion-buttons slot="start">
+    <ion-button (click)="goHome()" fill="clear">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+
+  <ion-title class="centered-title">Streak</ion-title>
+
+
+  <ion-buttons slot="end">
+    <ion-button 
+      fill="clear" 
+      *ngIf="segmentValue==='personal'">
+      <ion-icon name="share-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+
+  <ion-toolbar 
+  [ngClass]="{ 'toolbar-white': scrolled || segmentValue === 'friends' }" 
+  class="segment-toolbar" 
+>
+  <ion-segment [(ngModel)]="segmentValue" color="primary">
+    <ion-segment-button value="personal">
+      <ion-label>PERSONAL</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="friends">
+      <ion-label>FRIENDS</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+</ion-header>
+<ng-container *ngIf="segmentValue === 'personal'; else friendsTpl">
+<ion-content  (ionScroll)="onScroll($event)" scrollEvents="true" class="streak-content">
+  <div class="streak-top">
+    <div class="streak-badge active">STREAK SOCIETY</div>
+    <div class="streak-main">
+      <div>
+      <div class="streak-number">746</div>
+      <div class="streak-text">Day Streak!</div>
+      </div>
+      <i class="fa-solid fa-fire streak-icon"></i>
+    </div>
+    <div class="streak-desc-box">
+      <ion-icon name="sunny-outline" color="warning"></ion-icon>
+      <p>You’ve extended your streak 3 times before noon this week!</p>
+    </div>
+  </div>
+
+  <div class="streak-challenge-section">
+    <h4>Streak Challenge</h4>
+    <div class="challenge-box">
+      <img src="assets/calender.png" />
+      <div class="challenge-text">
+        <p>Earn gems by keeping your streak alive!</p>
+        <ion-button color="" expand="block" class="join-btn">JOIN CHALLENGE</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-header">
+    
+
+    <div class="month-title">
+      {{ monthNames[currentDate.getMonth()] }} {{ currentDate.getFullYear() }}
+    </div>
+
+    <ion-button fill="clear" size="small" (click)="prevMonth()" color="medium">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button fill="clear" size="small" (click)="nextMonth()" color="medium">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <ion-badge class="badge-great">GREAT</ion-badge>
+      <ion-icon name="checkmark-circle-outline" class="icon-orange"></ion-icon>
+      <div>
+        <div class="stat-number">7</div>
+        <div class="stat-label">Days practiced</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <ion-icon name="snow-outline" class="icon-blue"></ion-icon>
+      <div>
+        <div class="stat-number">2</div>
+        <div class="stat-label">Freezes used</div>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="calendar-box">
+    <div class="weekday-row">
+      <div *ngFor="let d of weekdayLabels">{{ d }}</div>
+    </div>
+
+    <div
+      class="week-row"
+      *ngFor="let week of calendarWeeks; let wi = index"
+      [ngClass]="{ 'highlight': wi < 2 }"
+    >
+      <ng-container *ngFor="let day of week">
+        <div
+          *ngIf="day === 0"
+          class="empty-cell"
+        ></div>
+        <div *ngIf="day > 0" class="day-cell">
+          <span
+            [ngClass]="{
+              'day': true,
+              'faded': day <  dayStartHighlight || day > dayEndHighlight,
+              'bubble': highlightedDays.includes(day),
+              'orange': day === maxDay
+            }"
+          >
+            {{ day }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="society-section">
+    <h3>Streak Society</h3>
+    <ion-card class="society-card">
+      <ion-item lines="none">
+        <i class="fa-solid fa-gamepad"></i>
+        <ion-label>
+          <h4>New App Icon</h4>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  
+  </div>
+
+</ion-content>
+</ng-container>
+
+<ng-template #friendsTpl>
+<ng-container *ngIf="segmentValue === 'friends'">
+  <ion-content>
+    <div class="bungkus">
+  <div class="section invites-section">
+    <h4 class="section-title">New invites</h4>
+    <ion-card lines="none" class="invite-card">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/org1.png" />
+        </ion-avatar>
+        <ion-label class="invite-label">
+          <h5>DELOWAR…</h5>
+        </ion-label>
+        <ion-button fill="outline" color="medium" size="small" class="accept-btn">
+          ACCEPT
+        </ion-button>
+        <ion-button fill="clear" color="medium" size="small" class="cancel-btn">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card>
+  </div>
+
+
+  <div class="section friend-streaks-section">
+    <h4 class="section-title">Friend Streaks</h4>
+    <ion-list>
+      <ion-item *ngFor="let f of friendStreaks" lines="none" [class.pending]="f.pending">
+        <ion-avatar slot="start">
+          <img *ngIf="f.avatar" [src]="f.avatar" />
+          <div *ngIf="!f.avatar" class="avatar-initial">{{ f.initial }}</div>
+        </ion-avatar>
+        <ion-label>
+          <h5>{{ f.name }}</h5>
+          <p *ngIf="!f.pending" class="streak-info">
+            <i class="fa-solid fa-fire friend-icon"></i> {{ f.streak }}
+          </p>
+          <p *ngIf="f.pending" class="pending-text">Request pending</p>
+        </ion-label>
+        <ion-button
+          *ngIf="!f.pending"
+          fill="outline"
+          color="primary"
+          size="small"
+          class="nudge-btn"
+        >
+          NUDGE
+        </ion-button>
+        <ion-button
+          *ngIf="f.pending"
+          fill="clear"
+          color="medium"
+          size="small"
+          class="cancel-btn"
+        >
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>
+</ion-content>
+
+</ng-container>
+</ng-template>
+

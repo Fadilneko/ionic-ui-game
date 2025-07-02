@@ -1,0 +1,46 @@
+<ion-content class="leaderboard-content">
+
+  <div class="league-header">
+    <div class="judul">
+    <h2>Ruby League</h2>
+    <div class="judul-hari">
+    <ion-icon name="time-outline" color="warning"></ion-icon>
+    <span class="days-left">1 DAY</span>
+    </div>
+    </div>
+    
+    <div class="league-subtext">
+      You're 35 XP from the promotion zone!
+      
+     
+    </div>
+
+    
+    <div class="podium">
+      <ion-icon name="trophy-outline" class="medal gold"></ion-icon>
+      <ion-icon name="trophy-outline" class="medal blue"></ion-icon>
+      <ion-icon name="trophy-outline" class="medal red"></ion-icon>
+      <ion-icon name="lock-closed-outline" class="medal gray"></ion-icon>
+      <ion-icon name="lock-closed-outline" class="medal gray"></ion-icon>
+    </div>
+  </div>
+
+  <div class="garis"></div>
+
+  <ion-list class="leaderboard-list" lines="none">
+    <ion-item class="leaderboard-item" *ngFor="let user of leaderboard; let i = index">
+      <div class="rank">{{ i + 1 }}</div>
+      <ion-icon [name]="user.icon" class="avatar-icon" [style.color]="user.color"></ion-icon>
+      <ion-label class="username">
+        {{ user.name }}
+        <div class="xp">{{ user.xp }} XP</div>
+      </ion-label>
+
+      
+    </ion-item>
+  </ion-list>
+  <div class="boost-badge-floating" *ngIf="showBoost">
+  <ion-icon name="flash-outline"></ion-icon>
+  <span>1h</span>
+</div>
+</ion-content>

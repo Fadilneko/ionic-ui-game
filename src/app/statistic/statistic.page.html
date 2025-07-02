@@ -1,0 +1,119 @@
+<ion-content class="stat-content">
+
+
+  <div class="profile-header">
+    <h2>ຮຮຮ</h2>
+    <p class="username">#PipinkF • Joined July 2018</p>
+
+    <div class="profile-meta">
+  <div class="meta-item">
+    <div class="meta-flex">
+    <img src="https://flagcdn.com/fr.svg" alt="FR" class="flag-icon" />
+    <ion-badge class="transparent-border">+11</ion-badge>
+
+    </div>
+    <div class="label">Courses</div>
+  </div>
+
+  <div class="garis"></div>
+
+  <div class="meta-item">
+    <strong>42</strong>
+    <div class="label">Following</div>
+  </div>
+
+  <div class="garis"></div>
+
+  <div class="meta-item">
+    <strong>37</strong>
+    <div class="label">Followers</div>
+  </div>
+</div>
+
+
+    <ion-grid>
+  <ion-row>
+    <ion-col >
+      <ion-button expand="block" fill="outline" color="primary" class="add-friend-button">
+        <ion-icon name="person-add-outline" color="primary"></ion-icon>
+        ADD FRIENDS
+      </ion-button>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-button  fill="outline" color="primary">
+        <ion-icon name="share-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+  </div>
+
+  <!-- Overview Section -->
+  <div class="section">
+    <h3>Overview</h3>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="flex">
+        <i class="fa-solid fa-fire streak-icon"></i>
+        <div class="value">746</div>
+        </div>
+        <div class="label">Day streak</div>
+      </div>
+      <div class="overview-card">
+        <div class="flex">
+        <ion-icon name="flash-outline" color="warning"></ion-icon>
+        <div class="value">216022</div>
+        </div>
+        <div class="label">Total XP</div>
+      </div>
+      <div class="overview-card league-card">
+        <div class="flex">
+        <ion-icon name="trophy-outline" color="danger"></ion-icon>
+        <div class="value">Ruby</div>
+        </div>
+        <div class="label">League</div>
+        
+        <ion-badge color="danger" class="week-badge">WEEK 6</ion-badge>
+      </div>
+      <div class="overview-card">
+        <div class="flex">
+        <ion-icon name="medal-outline" color="warning"></ion-icon>
+        <div class="value">14</div>
+        </div>
+        <div class="label">Top 3 finishes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Friend Streaks -->
+  <div class="section2">
+    <h3>Friend Streaks</h3>
+    <div class="friend-streaks">
+      <div class="friend" *ngFor="let friend of friendStreaks; let i = index">
+  <div class="avatar-wrapper">
+    <ion-avatar>
+      <img [src]="friend.avatar" *ngIf="friend.avatar" />
+      <div *ngIf="!friend.avatar" class="avatar-initial">{{ friend.initial }}</div>
+    </ion-avatar>
+
+    <!-- Time icon hanya untuk 3 terakhir -->
+    <ion-icon
+      *ngIf="i >= friendStreaks.length - 3"
+      name="time-outline"
+      class="friend-time-icon">
+    </ion-icon>
+  </div>
+
+  
+  <div class="streak" *ngIf="i < friendStreaks.length - 3">
+    <i class="fa-solid fa-fire streak-icon"></i>
+    {{ friend.streak }}
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+</ion-content>

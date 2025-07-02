@@ -1,0 +1,183 @@
+<ion-header [ngClass]="{'header-badges': segmentValue === 'badges'}">
+  <ion-toolbar [color]="segmentValue === 'badges' ? 'dark' : 'primary'">
+    <ion-segment [(ngModel)]="segmentValue" [color]="segmentValue === 'badges' ? 'primary' : 'dark'" >
+      <ion-segment-button value="quests">
+        <ion-label>QUESTS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="badges">
+        <ion-label>BADGES</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+ 
+  <ng-container *ngIf="segmentValue === 'quests'; else badgesTpl">
+   
+    <!-- Bagian atas biru -->
+    <ion-content (ionScroll)="onScroll($event)" scrollEvents="true">
+       <div class="bungkus">
+  <div class="quests-header">
+
+    <div class="q-header" [class.hide]="hideHeader">
+      <div>
+      <div class="month-badge">{{ currentMonthLabel }}</div>
+      </div>
+      <div class="flex">
+      <div>
+      <h2 class="quest-title">{{ currentQuestTitle }}</h2>
+      <div class="days-remaining">
+        <ion-icon name="time-outline"></ion-icon>
+        <span>{{ daysRemaining }} DAYS</span>
+      </div>
+      </div>
+      
+      <img src="assets/shell.png" class="img-header">
+      </div>
+     
+    </div>
+
+    <div class="fix">
+      <ion-card class="quest-progress-card">
+        <ion-card-content>
+          <h3>Complete {{ totalQuests }} quests</h3>
+          <div class="progress-container">
+            <ion-progress-bar [value]="questProgressValue"></ion-progress-bar>
+            <div class="progress-text-inside" [style.left.%]="questProgressValue * 100"
+                 [ngClass]="{'text-dark': questProgressValue < 0.2}">
+              {{ completedQuests }} / {{ totalQuests }}
+            </div>
+            <img src="assets/shell.png" class="progress-lock-icon1">
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  </div>
+
+   
+    <div class="daily-quests-section">
+      <div class="daily-header">
+        <h3>Daily Quests</h3>
+        <div class="daily-timer">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>18 HOURS</span>
+        </div>
+      </div>
+
+      <ion-card class="daily-card">
+  <ion-list lines="none" class="daily-list">
+    <ion-item *ngFor="let item of dailyQuests" class="daily-item">
+      
+      <ion-icon class="daily-icon" slot="start" [name]="item.icon" color="medium"></ion-icon>
+
+      <ion-label class="item-label">
+        <h4>{{ item.title }}</h4><br>
+
+        <div class="daily-progress-container">
+          <ion-progress-bar [value]="calcDailyProgress(item)"></ion-progress-bar>
+
+          
+          
+
+          <div class="daily-progress-text-inside" 
+               [ngClass]="{'text-dark': calcDailyProgress(item) < 0.2}">
+            {{ item.current }} / {{ item.total }}
+          </div>
+
+          
+       
+          <img class="reward-icon-inside"
+                    [src]="item.rewardIcon"
+                    color="medium">
+          
+        </div>
+      </ion-label>
+    </ion-item>
+    
+  </ion-list>
+
+</ion-card>
+
+    </div>
+
+     <div class="friend-quests-section">
+  <div class="friend-header">
+    <h3>Friends Quest</h3>
+    <div class="friend-timer">
+      <ion-icon name="time-outline"></ion-icon>
+      <span>NEXT IN 3 DAYS</span>
+    </div>
+  </div>
+
+  <ion-card class="friend-card">
+    <ion-card-content>
+      <div class="friend-target">
+        <strong>Earn 450 XP</strong>
+      </div>
+
+      <div class="friend-progress-container">
+        <ion-progress-bar class="friend-progress-bar" value="1.0"></ion-progress-bar>
+  
+          <img src="assets/chest-open.png" class="progress-lock-icon1">
+
+          <div class="completed-text">Completed!</div>
+      </div>
+
+      <div class="garis"></div>
+
+      <div class="friend-members">
+        <div class="friend-avatar">
+          <img src="assets/org1.png" alt="You" />
+          <div class="friend-name">You</div>
+          <div class="friend-xp">107 XP</div>
+        </div>
+
+        <div class="friend-divider"></div>
+
+        <div class="friend-avatar">
+          <img src="assets/org1.png" alt="Atomic" />
+          <div class="friend-name">Atomic</div>
+          <div class="friend-xp purple">343 XP</div>
+        </div>
+      </div>
+
+      <div class="high-five">
+        👏 HIGH FIVED ATOMIC!
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>
+  </ng-container>
+
+
+  <ng-template #badgesTpl>
+
+<ng-container class="badge-container" *ngIf="segmentValue === 'badges'">
+  <div class="badges-wrapper">
+    <div class="badge-year-section" *ngFor="let year of badgeData">
+      <div class="badge-year-label">{{ year.year }}</div>
+      <div class="bungkus-badge">
+      <ion-card class="badge-card" *ngFor="let badge of year.badges">
+        <ion-item lines="none" class="badge-item">
+          <div class="badge-icon-container">
+            <ion-icon [name]="badge.icon" [style.backgroundColor]="badge.color"></ion-icon>
+          </div>
+          <ion-label>
+            <h4 class="badge-title">{{ badge.title }}</h4>
+            <p class="badge-month">{{ badge.month }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+  </ng-template>
+
+
+ 

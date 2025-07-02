@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="friend-feed-content">
+  <ion-card class="feed-card">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="https://i.pravatar.cc/150?img=1" />
+      </ion-avatar>
+      <ion-label>
+        <h3 class="name">Alvin Fauzie</h3>
+        <p class="time">1 day</p>
+      </ion-label>
+      
+    </ion-item>
+
+    <div class="feed-text">Did more than 10 lessons in a day!
+      <img class="feed-image" src="assets/book-open.png" />
+    </div>
+
+    <ion-card-content>
+
+      <div class="flex">
+
+      <ion-button expand="block" fill="outline" class="celebrate-button">
+        <ion-icon name="sparkles-outline" slot="start"></ion-icon>
+        CELEBRATE
+      </ion-button>
+
+      <div class="reactions-stacked">
+        <ion-avatar class="reaction-icon" style="left: 20px; z-index: 2;">
+          <img src="assets/sparkles.png" />
+        </ion-avatar>
+        <ion-avatar class="reaction-icon" style="left: 40px; z-index: 1;">
+          <img src="assets/clapping.png" />
+        </ion-avatar>
+        <div class="reaction-count">10</div>
+      </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      
+      <ion-input placeholder="Add a comment…" class="comment-input"></ion-input>
+    </ion-card-content>
+  </ion-card>
+
+ 
+  <ion-card class="feed-card">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <div class="avatar-initial">B</div>
+      </ion-avatar>
+      <ion-label>
+        <h3 class="name">Bob Singadikrama</h3>
+        <p class="time">1 day</p>
+      </ion-label>
+
+      
+      
+    </ion-item>
+
+    <div class="feed-text">Completed 3 Friends Quests in a row!
+      <img class="feed-image" src="assets/chest-animasi.png" />
+    </div>
+
+    <ion-card-content>
+      
+      
+
+      <div class="flex">
+
+      <ion-button expand="block" fill="outline" class="celebrate-button">
+        <ion-icon name="sparkles-outline" slot="start"></ion-icon>
+        CELEBRATE
+      </ion-button>
+
+  
+      <div class="reactions-single">
+        <ion-avatar class="reaction-icon">
+          <img src="assets/sparkles.png" />
+        </ion-avatar>
+        <div class="reaction-count">9</div>
+      </div>
+
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

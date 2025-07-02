@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar >
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goHome()" fill="clear">
+        <ion-icon name="close-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-title class="centered-title">Shop</ion-title>
+
+
+    <ion-buttons slot="end">
+      <div class="gem-count">
+        <i class="fa-solid fa-gem"></i>
+        <span>{{ gems }}</span>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="shop-content" fullscreen>
+
+  <div class="promo-banner">
+    <div class="promo-content">
+      <div class="promo-left">
+        <div class="promo-badge">SUPER</div>
+        <h2 class="promo-title">Save with family packages!</h2>
+        <p class="promo-subtitle">Learn faster for 2–6 people</p>
+      </div>
+      <div class="promo-right">
+        <img src="assets/vip.png" alt="Family package" />
+      </div>
+    </div>
+   
+    <ion-button fill="outline" class="promo-btn" (click)="goToSuper()">
+      TRY 2 WEEKS FREE
+    </ion-button>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">My Items</h3>
+    <div class="items-grid">
+      <div *ngFor="let item of myItems" class="item-card">
+        <img [src]="item.icon" alt="{{ item.label }}" />
+        <div class="item-label">{{ item.label }}</div>
+        <div class="item-count">x{{ item.count }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">Special Offers</h3>
+    <ion-card lines="none" class="offer-card" *ngFor="let offer of offers">
+      <ion-item lines="none">
+        <div slot="start" class="offer-tag">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>{{ offer.expires }}</span>
+        </div>
+        <ion-avatar slot="start" class="offer-icon">
+          <img [src]="offer.icon" />
+        </ion-avatar>
+        <ion-label>
+          <h4>{{ offer.title }}</h4>
+        </ion-label>
+        <ion-button fill="clear" slot="end" color="primary" (click)="claim(offer)">
+          CLAIM
+        </ion-button>
+      </ion-item>
+    </ion-card>
+  </div>
+
+   <div class="section popular-section">
+    <h3 class="section-title">Popular Packs</h3>
+    <ion-card lines="none" class="item-card popular">
+      <div class="badge-popular">POPULAR</div>
+      <ion-item lines="none">
+        <ion-avatar slot="start" class="item-icon">
+          <img src="assets/timer.png" alt="5 pack" />
+        </ion-avatar>
+        <ion-label>
+          <h4>5 pack</h4>
+        </ion-label>
+        <div class="item-price">
+          <i class="fa-solid fa-gem"></i>
+          <span>1800</span>
+        </div>
+      </ion-item>
+    </ion-card>
+
+    <ion-card lines="none" class="item-card">
+      <ion-item lines="none">
+        <ion-avatar slot="start" class="item-icon">
+          <img src="assets/timer.png" alt="15 pack" />
+        </ion-avatar>
+        <ion-label>
+          <h4>15 pack</h4>
+        </ion-label>
+        <div class="item-price">
+          <i class="fa-solid fa-gem"></i>
+          <span>4500</span>
+        </div>
+      </ion-item>
+    </ion-card>
+  </div>
+
+ 
+  <div class="section gems-section">
+    <h3 class="section-title">Gems</h3>
+    <p class="section-subtitle">Buy powerups and refills with our currency</p>
+
+    <ion-card lines="none" class="item-card">
+      <ion-item lines="none">
+        <ion-avatar slot="start" class="item-icon">
+          <img src="assets/gems-pack.png" alt="1200 gems" />
+        </ion-avatar>
+        <ion-label>
+          <h4>1200</h4>
+        </ion-label>
+        <div class="item-price">
+          <span class="currency">RP 29.000</span>
+        </div>
+      </ion-item>
+    </ion-card>
+
+    <ion-card lines="none" class="item-card">
+      <ion-item lines="none">
+        <ion-avatar slot="start" class="item-icon">
+          <img src="assets/gems-pack2.png" alt="3000 gems" />
+        </ion-avatar>
+        <ion-label>
+          <h4>3000</h4>
+        </ion-label>
+        <div class="item-price">
+          <span class="currency">RP 58.000</span>
+        </div>
+      </ion-item>
+    </ion-card>
+  </div>
+
+</ion-content>

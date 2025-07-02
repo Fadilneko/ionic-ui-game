@@ -1,0 +1,521 @@
+
+
+
+  ion-segment-button {
+    font-weight: bold;
+    color: #333;
+  }
+
+
+
+.bungkus {
+  height: 330px;
+  background-color: white;
+}
+
+/* Bagian Quests header: background biru penuh */
+.quests-header {
+  background-color: var(--ion-color-primary);
+  color: #ffffff;
+  padding: 16px;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.q-header {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 100px;
+  overflow: hidden;
+  padding-bottom: 150px;
+ 
+
+}
+
+.q-header.hide {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.img-header {
+    width: 100px;
+}
+
+
+/* Badge bulan */
+.month-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 12px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Judul quest */
+.quest-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.progress-container {
+  position: relative;
+}
+
+
+.progress-container ion-progress-bar {
+  height: 16px;
+  border-radius: 8px;
+}
+.progress-text-inside {
+  position: absolute;
+  top: 50%;
+  transform: translate(-80%, -50%);
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.progress-text-inside.text-dark {
+  color: #333;
+}
+
+/* Days remaining */
+.days-remaining {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 0.9rem;
+
+}
+.days-remaining ion-icon {
+  margin-right: 4px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.days-remaining span {
+  color: rgba(255,255,255,0.9);
+}
+
+
+/* Card progress utama */
+.quest-progress-card {
+  margin-top: 16px;
+  border-radius: 14px;
+  background-color: white;
+
+}
+
+
+.quest-progress-card ion-card-content {
+  padding: 32px;
+
+}
+.quest-progress-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+.quest-progress-card ion-progress-bar {
+  height: 20px;
+  border-radius: 10px;
+  --background: #e0e0e0;
+  --progress-background: #3880ff;
+}
+.progress-text {
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Daily Quests Section */
+.daily-quests-section {
+
+  padding: 16px;
+  background: #ffffff;
+}
+
+.daily-header {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.daily-header h3 {
+  color: #333;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.daily-timer {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--ion-color-warning);
+}
+.daily-timer ion-icon {
+  margin-right: 4px;
+}
+
+.progress-lock-icon {
+  position: absolute;
+  right: 0px;
+  top: 10%;
+  transform: translateY(-50%);
+  font-size: 2.5rem; 
+  pointer-events: none;
+}
+
+
+
+
+/* Daily card */
+
+.daily-progress-container {
+  position: relative;
+  margin-top: 4px;
+}
+
+.daily-progress-container ion-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  --background: #e0e0e0;
+  --progress-background: var(--ion-color-warning);
+}
+
+.daily-progress-text-inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  font-weight: bold;
+  pointer-events: none;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.daily-progress-text-inside.text-dark {
+  color: #333;
+}
+
+.reward-icon-inside {
+  position: absolute;
+  top: 20%;
+  width: 45px;
+  right: -4px;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #ffa500;
+  padding: 2px;
+  z-index: 2;
+}
+
+
+.daily-card {
+  margin-top: 12px;
+  border-radius: 12px;
+  background-color: white;
+}
+.daily-list {
+  background-color: white;
+}
+
+.daily-item {
+  background-color: white;
+}
+
+.daily-card ion-item {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --min-height: 100px;
+  align-items: center;
+  position: relative;
+  --background: white;
+}
+
+.daily-icon {
+ color: #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+
+.reward-icon {
+  color: #333;
+  border-radius: 50%;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  box-sizing: border-box;
+}
+
+
+.item-label {
+  width: 100%;
+ 
+}
+.item-label h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+.daily-card ion-progress-bar {
+  height: 6px;
+  border-radius: 3px;
+  --background: #e0e0e0;
+  --progress-background: #ffc409;
+}
+.daily-progress-container {
+  position: relative;
+  width: 100%;
+}
+.daily-progress-container ion-progress-bar {
+  height: 16px;        
+  border-radius: 8px;
+}
+.daily-progress-text-inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;  
+  font-weight: 500;
+  pointer-events: none;
+  white-space: nowrap;
+  color: #fff;        
+}
+.daily-progress-text-inside.text-dark {
+  color: #333;         
+}
+
+.friend-quests-section {
+  padding: 16px;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.friend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px 8px;
+}
+
+.friend-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.friend-timer {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.friend-timer ion-icon {
+  margin-right: 4px;
+}
+
+.friend-card {
+  border-radius: 16px;
+  background: #fff;
+}
+
+.friend-target {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+
+}
+
+.friend-progress-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.progress-lock-icon1 {
+  position: absolute;
+  top: 20%;
+  width: 45px;
+  right: -4px;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #ffa500;
+  padding: 2px;
+  z-index: 2;
+}
+
+
+.friend-progress-bar {
+  height: 18px;
+  border-radius: 10px;
+  --background: #f5d6ff;
+  --progress-background: #a965f7;
+}
+
+.completed-text {
+ 
+  color: #ffa500;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.garis {
+  width: 100%;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.friend-members {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.friend-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.friend-name {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.friend-xp {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.friend-xp.purple {
+  color: #a965f7;
+}
+
+.friend-divider {
+  width: 1px;
+  height: 60px;
+  background: #e0e0e0;
+}
+
+.high-five {
+  margin-top: 16px;
+  border: solid 1px #e0e0e0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #ffaf3d;
+}
+
+
+
+/* Badges placeholder */
+.badges-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 16px;
+}
+
+ng-container {
+  background-color: white;
+}
+
+.badges-wrapper {
+  padding: 16px;
+  background-color: white;
+  overflow: auto;
+  padding-bottom: 70px;
+}
+
+.badge-year-section {
+  margin-bottom: 24px;
+ 
+}
+
+.badge-year-label {
+  font-weight: bold;
+  color: gray;
+  margin: 12px 0 8px 8px;
+  font-size: 0.9rem;
+}
+
+.badge-card {
+ 
+  margin-bottom: 8px;
+}
+
+.bungkus-badge {
+  border: solid 1px #e0e0e0;
+  border-radius: 14px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  --background: white;
+}
+
+.badge-icon-container {
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.badge-icon-container ion-icon {
+  font-size: 2.5rem;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.badge-month {
+  margin: 0;
+  font-size: 0.85rem;
+  color: gray;
+}
+
+
+
+
+
+

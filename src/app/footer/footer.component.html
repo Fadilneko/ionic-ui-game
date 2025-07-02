@@ -1,0 +1,40 @@
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="row">
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/home']" [class.active-icon]="activeTab === 'home'" (click)="setActive('home')">
+            <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/tugas']" [class.active-icon]="activeTab === 'list'" (click)="setActive('list')">
+            <ion-icon slot="icon-only" name="list-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/aktifitas']" [class.active-icon]="activeTab === 'fitness'" (click)="setActive('fitness')">
+            <ion-icon slot="icon-only" name="fitness-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/piala']" [class.active-icon]="activeTab === 'trophy'" (click)="setActive('trophy')">
+            <ion-icon slot="icon-only" name="trophy-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/statistic']" [class.active-icon]="activeTab === 'person'" (click)="setActive('person')">
+            <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/friend-notifikasi']" [class.active-icon]="activeTab === 'notif'" (click)="setActive('notif')">
+            <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

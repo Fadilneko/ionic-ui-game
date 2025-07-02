@@ -1,0 +1,217 @@
+.stat-content {
+  --background: #fff;
+  padding: 16px;
+}
+
+.profile-header {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.profile-header h2 {
+ color: #444;
+}
+
+.username {
+  color: #888;
+  margin: 0;
+}
+
+.profile-meta {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0;
+
+  strong {
+    color: black;
+    margin-bottom: 3px;
+  }
+}
+
+.flag-icon {
+  width: 20px;
+  height: 16px;
+  border-radius: 2px;
+  margin-right: 6px;
+  
+}
+
+ion-badge.transparent-border {
+  --background: transparent;
+  --color: var(--ion-color-medium);
+  border: 1px solid var(--ion-color-medium);
+  font-weight: 500;
+  font-size: 8px;
+  padding: 4px ;
+  border-radius: 4px;
+}
+
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}
+
+
+.garis {
+  width: 1px;
+  background: #ccc;
+  margin: 0 12px;
+}
+
+.label {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.value {
+  color: #888;
+  font-size: 0.85rem;  
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-friend-button {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+
+  ion-icon {
+    margin-right: 8px; 
+    font-size: 20px;
+  }
+}
+
+
+.section {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.section h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 16px 0 8px;
+  color: #444;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.overview-card {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+  position: relative;
+
+    i {
+    color: #ffa000;
+    font-size: 1.4rem;
+  }
+}
+.overview-card ion-icon {
+  font-size: 24px;
+}
+.overview-card .value {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 4px;
+  color: black;
+}
+.overview-card .label {
+  font-size: 0.8rem;
+  color: #888;
+  padding-left: 26px;
+
+
+
+}
+
+.flex {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 5px;
+}
+
+.week-badge {
+  position: absolute;
+  top: -10px;
+  left: 90%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: white;
+  padding: 6px;
+}
+
+.section2 {
+    border: 1px solid #e0e0e0 ;
+    margin: 16px;
+    border-radius: 16px;
+}
+
+.section2 h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-left: 22px;
+  color: #444;
+}
+
+.friend-streaks {
+  display: flex;
+  gap: 12px;
+ 
+  justify-content: space-around;
+  padding: 18px;
+  
+}
+
+.friend {
+  text-align: center;
+}
+.friend ion-avatar {
+  width: 48px;
+  height: 48px;
+}
+.avatar-initial {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #8bc34a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-weight: bold;
+}
+.streak {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  color: #666;
+}
+
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.friend-time-icon {
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  bottom: -0px;
+  right: 0;
+  font-size: 14px;
+  color: var(--ion-color-medium);
+}
+
