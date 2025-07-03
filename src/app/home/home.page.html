@@ -1,6 +1,5 @@
 <ion-content class="home-content">
 
-  <!-- Header Stats -->
   <div class="header-stats">
     <div class="stat-item" (click)="toggleLanguageList()">
       <img src="https://flagcdn.com/es.svg" class="stat-icon" />
@@ -19,6 +18,74 @@
     </div>
   </div>
 
+
+<div class="map-container">
+ 
+  <div class="level-row center">
+    <div class="level-node pink" (click)="selectNode(0)"
+        [class.selected]="activeNodeIndex === 0">
+      <ion-icon name="barbel-outline" class="star-icon"></ion-icon>
+    </div>
+  </div>
+
+
+  <div class="level-row left">
+    <div class="level-img" (click)="selectNode(1)"
+        [class.selected]="activeNodeIndex === 1">
+      <img src="assets/chest-open.png" class="node-img">
+    </div>
+  </div>
+
+  <div class="level-row right with-avatar">
+  <div class="avatar-block" >
+    <img src="assets/avatar-game.png" class="avatar-character"/>
+
+    
+    <div class="star-row">
+      <ion-icon
+        *ngFor="let star of [1,2,3]; let i = index"
+        [name]="i < filledStars ? 'star' : 'star-outline'"
+        [style.color]="i < filledStars ? starColors[i] : '#ccc'"
+        class="tiny-star"
+      ></ion-icon>
+    </div>
+  </div>
+
+  <div class="level-node pink" (click)="onContinue()" (click)="selectNode(2)"
+        [class.selected]="activeNodeIndex === 2">
+    <ion-icon name="star-outline" class="star-icon"></ion-icon>
+    <div class="tooltip">CONTINUE</div>
+  </div>
+</div>
+
+  <div class="level-row left">
+    <div class="level-node grey" (click)="selectNode(3)"
+        [class.selected]="activeNodeIndex === 3">
+      <ion-icon name="book-outline" class="star-icon"></ion-icon>
+    </div>
+  </div>
+
+  <div class="level-row center" >
+    <div class="level-node grey locked" (click)="selectNode(4)"
+        [class.selected]="activeNodeIndex === 4">
+      <ion-icon name="lock-closed-outline" class="star-icon"></ion-icon>
+    </div>
+  </div>
+
+  
+  
+</div>
+
+  <div class="unit-card" *ngIf="showUnitCard">
+    <div class="unit-info">
+      <div class="unit-label">SECTION 2, UNIT 13</div>
+      <div class="unit-title">
+        Talk about free time, form the present tense
+      </div>
+    </div>
+    <div class="garis"></div>
+    <ion-icon name="list-outline" class="unit-icon"></ion-icon>
+  </div>
 
   <div class="language-tabs" *ngIf="showLanguageList">
     <div class="flex">

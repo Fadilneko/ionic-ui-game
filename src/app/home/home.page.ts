@@ -5,53 +5,88 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { addIcons } from 'ionicons';
 
-
-
 import {
-  homeOutline,
   flashOutline,
-  atOutline,
-  lockClosedOutline,
   notifications,
   listOutline,
   fitnessOutline,
   trophyOutline,
   personCircleOutline,
   timerOutline,
+  homeOutline,
+  atOutline,
+  lockClosedOutline,
   lockOpenOutline,
   arrowForwardCircleOutline,
   medalOutline,
   walkOutline,
   musicalNoteOutline,
   sparklesOutline,
-  flameOutline
-
-
+  flameOutline,
+  starOutline,
+  barbellOutline,
+  bookOutline
 } from 'ionicons/icons';
-
-
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [IonicModule, CommonModule, FormsModule],
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss']
 })
 export class HomePage {
+  showLanguageList = false;
+  showUnitCard = false;
+  activeNodeIndex: number | null = null;
+  filledStars = 0; 
+  starColors = ['#ffc107', '#42a5f5', '#ec407a'];
 
- showLanguageList = false;
+  constructor(private router: Router) {
+
+    addIcons({
+      'flash-outline': flashOutline,
+      'notifications-outline': notifications,
+      'list-outline': listOutline,
+      'fitness-outline': fitnessOutline,
+      'trophy-outline': trophyOutline,
+      'person-circle-outline': personCircleOutline,
+      'time-outline': timerOutline,
+      'home-outline': homeOutline,
+      'target-outline': atOutline,
+      'lock-closed-outline': lockClosedOutline,
+      'lock-open-outline': lockOpenOutline,
+      'arrow-forward-circle-outline': arrowForwardCircleOutline,
+      'medal-outline': medalOutline,
+      'walk-outline': walkOutline,
+      'musical-notes-outline': musicalNoteOutline,
+      'sparkles-outline': sparklesOutline,
+      'flame-outline': flameOutline,
+      'star-outline': starOutline,
+      'barbel-outline': barbellOutline,
+      'book-outline': bookOutline,
+    });
+
+
+    this.router.events.subscribe(evt => {
+      if (evt instanceof NavigationEnd) {
+        this.showLanguageList = false;
+        this.showUnitCard = false;
+        this.activeNodeIndex = null;
+      }
+    });
+  }
 
   toggleLanguageList() {
     this.showLanguageList = !this.showLanguageList;
   }
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
-    const target = event.target as HTMLElement;
-    const isInside = target.closest('.stat-item, .language-tabs');
-    if (!isInside) {
-      this.showLanguageList = false;
-    }
+  onContinue() {
+    this.showUnitCard = true;
+  }
+
+  selectNode(i: number) {
+    this.activeNodeIndex = i;
   }
 
   goToStreak() {
@@ -65,42 +100,23 @@ export class HomePage {
   goToSuper() {
     this.router.navigate(['/super']);
   }
- 
-   constructor(private router: Router) {
 
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.showLanguageList = false;
-      }
-    });
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+
    
-     addIcons({
-//   'notifications-outline': notifications,
-//   'list-outline': listOutline,
-//   'fitness-outline': fitnessOutline,
-//   'trophy-outline': trophyOutline,
-//   'person-circle-outline': personCircleOutline,
-//   'time-outline': timerOutline,
-//   'home-outline': homeOutline,
-//   'flash-outline': flashOutline,
-//   'target-outline': atOutline,
-//   'lock-closed-outline': lockClosedOutline,
-//   'lock-open-outline': lockOpenOutline,
-//   'arrow-forward-circle-outline': arrowForwardCircleOutline,
-//   'medal-outline': medalOutline,
-//   'walk-outline': walkOutline,
-//   'musical-notes-outline': musicalNoteOutline,
-//   'sparkles-outline': sparklesOutline,
-     'flame-outline': flameOutline,
+    if (!target.closest('.stat-item, .language-tabs')) {
+      this.showLanguageList = false;
+    }
 
-    });
+   
+    if (!target.closest('.level-node.pink')) {
+      this.showUnitCard = false;
+    }
 
-
-
+    if (!target.closest('.level-node, .level-img, .avatar-block')) {
+      this.activeNodeIndex = null;
+    }
   }
-
- 
-
-
-  
 }
