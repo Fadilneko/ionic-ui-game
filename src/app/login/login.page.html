@@ -1,0 +1,76 @@
+
+<ion-content fullscreen class="login-content">
+  <div class="logo"> 
+    <i class="fa-solid fa-gamepad"></i>
+    Nama Game Mu
+  </div>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+    <h2>Log in</h2>
+
+    <ion-item lines="none" class="input-item">
+      <ion-input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        [(ngModel)]="credentials.email">
+      </ion-input>
+
+      <ion-button
+        *ngIf="credentials.email"
+        slot="end"
+        fill="clear"
+        size="small"
+        (click)="credentials.email = ''">
+        &times;
+      </ion-button>
+      
+    </ion-item>
+
+    
+
+    <ion-item lines="none" class="input-item password-item">
+      <ion-input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+        [(ngModel)]="credentials.password">
+      </ion-input>
+      <ion-button fill="clear" size="small" slot="end" (click)="onForgot()">
+        FORGOT?
+      </ion-button>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      [disabled]="!loginForm.valid"
+      class="continue-btn"
+      type="submit">
+      CONTINUE
+    </ion-button>
+
+    <div class="divider"><span>OR</span></div>
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      class="google-btn"
+      (click)="onGoogle()">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      CONTINUE WITH GOOGLE
+    </ion-button>
+
+    <p class="terms">
+      By continuing, you agree to our 
+      <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+    </p>
+
+    <p class="signup">
+      NEED AN ACCOUNT? 
+      <a (click)="onSignup()">SIGN UP</a>
+    </p>
+
+  </form>
+</ion-content>

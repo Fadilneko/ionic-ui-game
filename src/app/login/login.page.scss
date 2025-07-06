@@ -1,0 +1,130 @@
+
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    color: rgb(33, 139, 231);
+    font-size: 1rem;
+    margin: 16px;
+    gap: 10px;
+    i {
+      font-size: 1.2rem;
+     
+    }
+  }
+
+
+.login-content {
+  --background: #ffffff;
+
+  form {
+    padding: 16px;
+    margin-top: 24px;
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 24px;
+    }
+  }
+
+  .input-item {
+    position: relative;
+    --border-color:#e0e0e0;
+    --background: #f7f7f7;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    margin-bottom: 16px;
+    ion-input {
+      color:#444;
+    }
+
+     ion-input:focus-within &,
+     &:focus-within {
+    --border-color: var(--ion-color-primary);
+  }
+  ion-button {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #888;
+  }
+  }
+
+  .password-item {
+    ion-button {
+      font-size: 0.75rem;
+      color: #999;
+    }
+  }
+
+  .continue-btn {
+    --border-radius: 8px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    --background: #c7c7c7;
+
+    &:not([disabled]) {
+      --background: var(--ion-color-primary);
+      --box-shadow: 0 4px 0px rgb(27, 104, 227);
+      color: white;
+    }
+  }
+
+  .divider {
+    text-align: center;
+    position: relative;
+    margin: 16px 0;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    &::before { left: 0; }
+    &::after { right: 0; }
+    span {
+      background: #fff;
+      padding: 0 8px;
+      color: #888;
+      font-size: 0.85rem;
+    }
+  }
+
+  .google-btn {
+    --border-radius: 8px;
+    --border-color: #ccc;
+    margin-bottom: 24px;
+    --color: #999;
+    --box-shadow: 0 4px 0px rgba(0, 0, 0, 0);
+
+    &:active {
+    --color: var(--ion-color-primary);
+  }
+
+  }
+
+  .terms {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+    a {
+      color: #999;
+      text-decoration: underline;
+    }
+    margin-bottom: 24px;
+  }
+
+  .signup {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #03a9f4;
+    font-weight: bold;
+    a {
+      cursor: pointer;
+    }
+  }
+}

@@ -14,7 +14,7 @@ export class AppComponent {
   showFooter = true;
 
  
-  private footerExcludedRoutes = ['/streak', '/shop', '/super'];
+  private footerExcludedRoutes = ['/streak', '/shop', '/super', '/login', '/signup'];
 
   constructor(private router: Router) {
     this.router.events

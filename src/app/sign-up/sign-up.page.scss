@@ -1,0 +1,118 @@
+ .logo {
+    display: flex;
+    justify-content: center;
+    color: rgb(33, 139, 231);
+    font-size: 1rem;
+    margin: 16px;
+    gap: 10px;
+    i {
+      font-size: 1.2rem;
+     
+    }
+  }
+
+.login-content {
+  --background: #ffffff;
+  form {
+    margin-top: 24px;
+    padding: 16px;
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 24px;
+    }
+  }
+
+  .input-item {
+    position: relative;
+    --border-color: #e0e0e0;
+    --background: #f7f7f7;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    &:focus-within {
+      --border-color: var(--ion-color-primary);
+    }
+
+    ion-input {
+      padding: 14px 0;
+      color: #444;
+    }
+
+    ion-button {
+      font-size: 1.2rem;
+      color: #888;
+    }
+  }
+
+  .password-item {
+    display: flex;
+    align-items: center;
+    ion-button {
+      font-size: 1.2rem;
+    }
+  }
+
+  .continue-btn {
+    --border-radius: 8px;
+    margin: 16px 0;
+    font-weight: bold;
+    --background: #c7c7c7;
+    color: #fff;
+
+    &:not([disabled]) {
+      --background: var(--ion-color-primary);
+      --box-shadow: 0 4px 0px rgba(0,0,0,0.15);
+    }
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    span {
+      margin: 0 8px;
+      color: #888;
+      font-size: 0.85rem;
+    }
+  }
+
+  .terms {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+    a {
+      color: #999;
+      text-decoration: underline;
+    }
+    margin-bottom: 24px;
+  }
+
+  .google-btn {
+    margin-bottom: 24px;
+    --border-radius: 8px;
+    --border-color: #ccc;
+    --color: #999;
+
+    &:active {
+      --color: var(--ion-color-primary);
+    }
+  }
+
+  .login {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #03a9f4;
+    a { cursor: pointer; }
+  }
+}
